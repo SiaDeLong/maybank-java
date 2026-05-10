@@ -1,0 +1,177 @@
+{
+  "info": {
+    "name": "Maybank Demo API",
+    "description": "API collection for Product and Post management",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Product",
+      "item": [
+        {
+          "name": "Get All Products",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/product?page=0&size=10",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "product"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "0",
+                  "description": "Page number (0-indexed)"
+                },
+                {
+                  "key": "size",
+                  "value": "10",
+                  "description": "Page size"
+                },
+                {
+                  "key": "name",
+                  "value": "",
+                  "description": "Filter by product name (partial match, case-insensitive)",
+                  "disabled": true
+                },
+                {
+                  "key": "description",
+                  "value": "",
+                  "description": "Filter by description (partial match, case-insensitive)",
+                  "disabled": true
+                },
+                {
+                  "key": "minPrice",
+                  "value": "",
+                  "description": "Minimum price filter",
+                  "disabled": true
+                },
+                {
+                  "key": "maxPrice",
+                  "value": "",
+                  "description": "Maximum price filter",
+                  "disabled": true
+                },
+                {
+                  "key": "minQuantity",
+                  "value": "",
+                  "description": "Minimum quantity filter",
+                  "disabled": true
+                },
+                {
+                  "key": "maxQuantity",
+                  "value": "",
+                  "description": "Maximum quantity filter",
+                  "disabled": true
+                }
+              ]
+            },
+            "description": "Retrieve paginated list of all products with optional filtering"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Product by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/product/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "product", "1"]
+            },
+            "description": "Retrieve a specific product by ID"
+          },
+          "response": []
+        },
+        {
+          "name": "Create Product",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Laptop\",\n  \"description\": \"High-performance laptop\",\n  \"price\": 1299.99,\n  \"quantity\": 50\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/product",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "product"]
+            },
+            "description": "Create a new product"
+          },
+          "response": []
+        },
+        {
+          "name": "Update Product",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Updated Laptop\",\n  \"description\": \"Updated high-performance laptop\",\n  \"price\": 1399.99,\n  \"quantity\": 45\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/product/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "product", "1"]
+            },
+            "description": "Update an existing product"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Post",
+      "item": [
+        {
+          "name": "Get All Posts",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/post",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "post"]
+            },
+            "description": "Retrieve all posts from JSONPlaceholder API"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Post by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/post/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "post", "1"]
+            },
+            "description": "Retrieve a specific post by ID from JSONPlaceholder API"
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8080",
+      "type": "string",
+      "description": "Base URL for the API server"
+    }
+  ]
+}
