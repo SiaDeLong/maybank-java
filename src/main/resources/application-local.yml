@@ -4,18 +4,14 @@ spring:
     properties:
       hibernate:
         format_sql: true
-        dialect: org.hibernate.dialect.MySQLDialect
+        dialect: org.hibernate.dialect.SQLServerDialect
     hibernate:
       ddl-auto: update
   datasource:
-    url: jdbc:mysql://localhost:3306/TESTDB
-    username: root
-    password: admin
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    # url: jdbc:sqlserver://localhost:1433;databaseName=TESTDB;encrypt=true;trustServerCertificate=true
-    # username: sa
-    # password: YourPassword123!
-    # driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: jdbc:sqlserver://localhost:1433;databaseName=TESTDB;encrypt=true;trustServerCertificate=true
+    username: sa
+    password: YourPassword123!
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
 
 app:
   log:
